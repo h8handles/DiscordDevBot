@@ -32,13 +32,12 @@ async def on_message(message):
 	if message.content.startswith('!hello'):
 		await message.channel.send("Hello!")
 #check if a memeber joined then hopefully tell that user hello or some stats 
-
+'''
 @client.event
 async def on_member_join()
 
-
-
-
+'''
+token = read_token()
 
 # client on server(aka BOT)
 client.run(token)
