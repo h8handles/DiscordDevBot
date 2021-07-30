@@ -13,7 +13,12 @@ import asyncio
 #client
 client = commands.Bot(command_prefix = '!')
 
-token = 'ODY5OTMyNjA0MzExMzQzMTg1.YQFZ3w.WaGLJ-U82AmAyvpE52X0SUqpIpw'
+def read_token():
+    with open("token.txt", "r") as f:
+        lines = f.readlines()
+        return lines[0].strip()
+
+
 @client.event
 async def on_ready():
 	print('we have logged in as {0.user}'.format(client))
@@ -26,12 +31,16 @@ async def on_message(message):
 		 return 
 	if message.content.startswith('!hello'):
 		await message.channel.send("Hello!")
-#make version command executable on all channels
+#check if a memeber joined then hopefully tell that user hello or some stats 
+
+@client.event
+async def on_member_join()
 
 
 
 
-#run client on server(aka BOT)
+
+# client on server(aka BOT)
 client.run(token)
 
 
